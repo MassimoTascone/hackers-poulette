@@ -2,11 +2,27 @@
 
 
 img {
-    width: 220px;
+    width: 200px;
     height: auto;
 
 
 }
- #gender {
-     display: inline-block;
- }
+h1 {
+    color:#303030;
+    font-family: Bellota;
+}
+
+main {
+    background-color:#303030;
+}
+
+#button {
+    background-color:#15C5BD;
+    color:white;
+}
+
+@font-face {
+    font-family:Bellota;
+    src:url('assets/font/Bellota-Regular.otf');
+
+}

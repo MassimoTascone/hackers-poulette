@@ -8,9 +8,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hackers Poulettes | Contact us form</title>
@@ -19,22 +19,24 @@
 <body>
     <header class="container">
         <div class="row">
-            <div class="col-12 bg-danger text-center">
-                <h1>Contact Us</h1>
+            <div class="col-6 d-flex justify-content-start">
                 <img src="assets/img/hackers-poulette-logo.png" alt="Hackers Poulette's Logo">
             </div>
-
+            <div class="col-6 d-flex justify-content-end">
+                <h1>Contact Us</h1>
+            </div>
         </div>
 
     </header>
 
     <main class="container">
         <div class="row mt-4">
-            <div class="col-12">
-                <input type="text" class="form-control mb-4" placeholder="Name">
+            <div class="col-12" id="background">
+                <input type="text" class="form-control mt-4 mb-4" placeholder="Name">
                 <input type="text" class="form-control mb-4" placeholder="Lastname">
-                <input id="gender" type="radio"  name="gender">
-                <input id="gender" type="radio"  name="gender">
+                <label for="gender">Gender</label>
+                <input id="gender" type="radio" name="gender">
+                <input id="gender" type="radio" name="gender">
                 <input id="gender" type="radio" name="gender">
                 <input type="email" class="form-control mb-4" placeholder="Email">
                 <select name="country" class="form-control mb-4">
@@ -288,12 +290,16 @@
                     <option value="ZM">Zambia</option>
                     <option value="ZW">Zimbabwe</option>
                 </select>
-                <select name="object" class="form-control mb-4">
+                <label for="object">Object</label>
+
+                <select name="object" class="form-control mb-2">
                     <option value="">value1</option>
                     <option value="">value2</option>
                     <option value="">value3</option>
                 </select>
-                <textarea name="msg" id="" cols="30" rows="10" class="form-control mb-4"></textarea>
+                <textarea name="msg" id="" cols="30" rows="10" class="form-control mb-4"
+                    placeholder="Write your message..."></textarea>
+                <button id="button" type="button" class="form-control btn mb-4">Send</button>
 
             </div>
 
