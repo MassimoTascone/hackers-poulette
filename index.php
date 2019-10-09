@@ -19,10 +19,10 @@
 <body>
     <header class="container">
         <div class="row">
-            <div class="col-6 d-flex justify-content-start">
-                <img src="assets/img/hackers-poulette-logo.png" alt="Hackers Poulette's Logo">
+            <div class="col-6 col-md-4 offset-md-2 d-flex justify-content-start mt-4">
+                <img src="assets/img/logo.png" alt="">
             </div>
-            <div class="col-6 d-flex justify-content-end">
+            <div class="col-6 col-md-4 d-flex justify-content-end mt-4">
                 <h1>Contact Us</h1>
             </div>
         </div>
@@ -31,13 +31,13 @@
 
     <main class="container">
         <div class="row mt-4">
-            <div class="col-12" id="background">
+            <div class="col-12 col-md-8 offset-md-2" id="background">
                 <input type="text" class="form-control mt-4 mb-4" placeholder="Name">
                 <input type="text" class="form-control mb-4" placeholder="Lastname">
                 <label for="gender">Gender</label>
-                <input id="gender" type="radio" name="gender">
-                <input id="gender" type="radio" name="gender">
-                <input id="gender" type="radio" name="gender">
+                <input id="gender" type="radio" name="gender" value="Male">
+                <input id="gender" type="radio" name="gender" value="Female">
+                <input id="gender" type="radio" name="gender" value="Other">
                 <input type="email" class="form-control mb-4" placeholder="Email">
                 <select name="country" class="form-control mb-4">
                     <option value="AF">Afghanistan</option>
@@ -290,8 +290,9 @@
                     <option value="ZM">Zambia</option>
                     <option value="ZW">Zimbabwe</option>
                 </select>
-                <label for="object">Object</label>
-
+                <div class="text-center">
+                <label for="object">Message</label>
+                </div>
                 <select name="object" class="form-control mb-2">
                     <option value="">value1</option>
                     <option value="">value2</option>

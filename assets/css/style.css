@@ -2,7 +2,7 @@
 
 
 img {
-    width: 200px;
+    width: 120px;
     height: auto;
 
 
@@ -10,10 +10,17 @@ img {
 h1 {
     color:#303030;
     font-family: Bellota;
+    margin-top: auto;
+    margin-bottom: auto;
+
 }
 
-main {
+
+/* #background {
     background-color:#303030;
+} */
+label {
+    color:white;
 }
 
 #button {
@@ -23,6 +30,14 @@ main {
 
 @font-face {
     font-family:Bellota;
-    src:url('assets/font/Bellota-Regular.otf');
+    src:url('assets/fonts/Bellota-Regular.otf');
+    font-style: normal;
+    font-weight: normal;
+
+}
+@font-face {
+    font-family:Bellota;
+    src:url('assets/fonts/Bellota-Bold.otf');
+    font-weight: bold;
 
 }
