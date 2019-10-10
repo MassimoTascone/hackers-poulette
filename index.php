@@ -20,7 +20,7 @@
     <header class="container">
         <div class="row">
             <div class="col-6 col-md-4 offset-md-2 d-flex justify-content-start mt-4">
-                <img src="assets/img/logo.png" alt="">
+                <img src="assets/img/logo.png" alt="Hackers Poulettes's Logo">
             </div>
             <div class="col-6 col-md-4 d-flex justify-content-end mt-4">
                 <h1>Contact Us</h1>
@@ -32,14 +32,32 @@
     <main class="container">
         <div class="row mt-4">
             <div class="col-12 col-md-8 offset-md-2" id="background">
-                <input type="text" class="form-control mt-4 mb-4" placeholder="Name">
+                <input required type="text" class="form-control mt-4 mb-4" placeholder="Name">
                 <input type="text" class="form-control mb-4" placeholder="Lastname">
-                <label for="gender">Gender</label>
-                <input id="gender" type="radio" name="gender" value="Male">
-                <input id="gender" type="radio" name="gender" value="Female">
-                <input id="gender" type="radio" name="gender" value="Other">
+                <label for="gender" class="text-center col-12">Gender</label>
+                <div class="text-center mb-3">
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input name="gender" type="radio" class="form-check-input" value="male">Male
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input name="gender" type="radio" class="form-check-input" value="female">Female
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label">
+                        <input name="gender" type="radio" class="form-check-input" value="other">Other
+                    </label>
+                </div>
+
+
+                </div>
+                
                 <input type="email" class="form-control mb-4" placeholder="Email">
                 <select name="country" class="form-control mb-4">
+                    <option value="" disabled selected>Select your country</option>
                     <option value="AF">Afghanistan</option>
                     <option value="AX">Åland Islands</option>
                     <option value="AL">Albania</option>
@@ -291,7 +309,7 @@
                     <option value="ZW">Zimbabwe</option>
                 </select>
                 <div class="text-center">
-                <label for="object">Message</label>
+                    <label for="object">Message</label>
                 </div>
                 <select name="object" class="form-control mb-2">
                     <option value="">value1</option>
@@ -300,7 +318,7 @@
                 </select>
                 <textarea name="msg" id="" cols="30" rows="10" class="form-control mb-4"
                     placeholder="Write your message..."></textarea>
-                <button id="button" type="button" class="form-control btn mb-4">Send</button>
+                <button id="button" type="submit" class="form-control mb-4">Send</button>
 
             </div>
 

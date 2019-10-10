@@ -1,6 +1,8 @@
 /* CSs for hackers pouletto */
 
-
+body {
+    font-family: bellotaregular;
+}
 img {
     width: 120px;
     height: auto;
@@ -9,35 +11,47 @@ img {
 }
 h1 {
     color:#303030;
-    font-family: Bellota;
+    font-family: bellotaregular;
     margin-top: auto;
     margin-bottom: auto;
 
 }
+#button {
+    background-color:#15C5BD;
+    color:white;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    font-style:normal !important;
+    font-weight: bold;
+}
+.form-control {
+
+    background-color : #F2F2F2;
+    font-style: oblique; 
+  
+  }
 
 
 /* #background {
     background-color:#303030;
 } */
 label {
-    color:white;
+    color:#303030;
 }
 
-#button {
-    background-color:#15C5BD;
-    color:white;
-}
+
+
+
 
 @font-face {
-    font-family:Bellota;
-    src:url('assets/fonts/Bellota-Regular.otf');
-    font-style: normal;
+    font-family: 'bellotaregular';
+    src: url('../fonts/Bellota-Regular-webfont.woff');
+
     font-weight: normal;
+    font-style: normal;
 
 }
-@font-face {
-    font-family:Bellota;
-    src:url('assets/fonts/Bellota-Bold.otf');
-    font-weight: bold;
 
-}
+
+
+
