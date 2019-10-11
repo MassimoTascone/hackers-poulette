@@ -1,4 +1,5 @@
 # Form Hackers-Poulette
+![WebPage](assets/img/site.png)
 
 ## What I had to do 
 I had to create a functionnal form that works with PHP and Boostrap.
