@@ -1,17 +1,24 @@
 <?php
 
-$name = $_POST['name'];
-$lastname = $_POST['lastname'];
-$gender = $_POST['gender'];
-$mail = $_POST['mail'];
-$country = $_POST['country'];
-$obj = $_POST['object'];
-$msg = $_POST['msg'];
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
+    $gender = $_POST['gender'];
+    $mail = $_POST['mail'];
+    $country = $_POST['country'];
+    $obj = $_POST['object'];
+    $msg = $_POST['msg'];
+
+    function checkempty($valeur){
+        if(isset($_POST["submit"])){
+            if(empty($_POST[$valeur])){
+                echo '<p class="error">This field cannot be empty</p>';
+            }
+        }
+    }
+
+ 
 
 
-
-echo "<pre>";
-print_r($_POST);
 
 
 
@@ -23,10 +30,10 @@ print_r($_POST);
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Hackers Poulettes | Support</title>
 </head>
 
@@ -46,30 +53,33 @@ print_r($_POST);
     <main class="container">
         <div class="row mt-4">
             <div class="col-12 col-md-8 offset-md-2" id="background">
-                <form action="" method="post">
-                    <input required type="text" name="name" class="form-control mt-4 mb-4" placeholder="Name">
-                    <input type="text" class="form-control mb-4" name="lastname" placeholder="Lastname">
-                    <label for="gender" class="text-center col-12">Gender</label>
-                    <div class="text-center mb-3">
+                <form action="index.php" method="post">
+                    <input type="text" name="name" class="form-control mt-4" placeholder="Name">
+                    <?php checkempty('name')?>
+                    <input type="text" class="form-control mt-4" name="lastname" placeholder="Lastname">
+                    <?php checkempty('lastname')?>
+                    <label for="gender" class="text-center col-12 mt-4">Gender</label>
+                    <div  class="text-center mt-3">
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input name="gender" type="radio" class="form-check-input" value="male">Male
+                                <input required name="gender" type="radio" class="form-check-input" value="male">Male
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input name="gender" type="radio" class="form-check-input" value="female">Female
+                                <input required name="gender" type="radio" class="form-check-input" value="female">Female
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input name="gender" type="radio" class="form-check-input" value="other">Other
+                                <input required name="gender" type="radio" class="form-check-input" value="other">Other
                             </label>
                         </div>
                     </div>
 
-                    <input type="email" class="form-control mb-4" name="mail" placeholder="Email">
-                    <select name="country" class="form-control mb-4">
+                    <input type="email" class="form-control mt-4" name="mail" placeholder="Email adress">
+                    <?php checkempty('name')?>
+                    <select name="country" class="form-control mt-4">
                         <option value="" disabled selected>Select your country</option>
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Åland Islands</option>
@@ -330,9 +340,10 @@ print_r($_POST);
                         <option value="complain">Complain</option>
                         <option value="other">Other</option>
                     </select>
-                    <textarea name="msg" id="" cols="30" rows="10" class="form-control mb-4"
+                    <textarea name="msg" id="" cols="30" rows="10" class="form-control mb-5"
                         placeholder="Write your message..."></textarea>
-                    <button id="button" type="submit" class="form-control mb-4">Send</button>
+                    
+                    <input id="button" type="submit" name="submit" class="form-control mb-4" value="Submit">
             </div>
         </div>
         </form>

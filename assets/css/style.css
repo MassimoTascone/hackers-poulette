@@ -32,6 +32,8 @@ h1 {
   }
 
 
+
+
 /* #background {
     background-color:#303030;
 } */
@@ -52,6 +54,12 @@ label {
 
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+}
 
-
-
+.good {
+    color:green;
+    font-size: 12px;
+}
