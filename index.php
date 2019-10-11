@@ -16,10 +16,25 @@
         }
     }
 
- 
+    function valid($valeur, $var){
+        if(isset($_POST['submit'])){
+            $var = $_POST[$valeur];
+            $varFilt = filter_var($var,FILTER_SANITIZE_STRING);
+            if (!empty($_POST[$valeur] and $var != $varFilt)){
+                echo '<p class="error">Wrong input</p>';
+            }
+        }
+    }
 
-
-
+    function validMail($valeur, $var){
+        if(isset($_POST['submit'])){
+            $var = $_POST[$valeur];
+            $varFilt = filter_var($var,FILTER_SANITIZE_EMAIL);
+            if (!empty($_POST[$valeur] and $var != $varFilt)){
+                echo '<p class="error">Wrong email</p>';
+            }
+        }
+    }
 
 
 ?>
@@ -28,11 +43,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="assets/img/favicon.ico" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Hackers Poulettes | Support</title>
 </head>
@@ -55,32 +70,33 @@
             <div class="col-12 col-md-8 offset-md-2" id="background">
                 <form action="index.php" method="post">
                     <input type="text" name="name" class="form-control mt-4" placeholder="Name">
-                    <?php checkempty('name')?>
+                    <?php checkempty('name'); valid('name', 'name')?>
                     <input type="text" class="form-control mt-4" name="lastname" placeholder="Lastname">
-                    <?php checkempty('lastname')?>
-                    <label for="gender" class="text-center col-12 mt-4">Gender</label>
+                    <?php checkempty('lastname'); valid('name', 'name')?>
+                    <label for="gender" class="text-center col-12 mt-4">Gender <?php checkempty('lastname')?></label>
                     <div  class="text-center mt-3">
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input required name="gender" type="radio" class="form-check-input" value="male">Male
+                                <input name="gender" type="radio" class="form-check-input" value="male">Male
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input required name="gender" type="radio" class="form-check-input" value="female">Female
+                                <input name="gender" type="radio" class="form-check-input" value="female">Female
                             </label>
                         </div>
                         <div class="form-check-inline">
                             <label class="form-check-label">
-                                <input required name="gender" type="radio" class="form-check-input" value="other">Other
+                                <input name="gender" type="radio" class="form-check-input" value="other">Other
                             </label>
                         </div>
                     </div>
 
                     <input type="email" class="form-control mt-4" name="mail" placeholder="Email adress">
-                    <?php checkempty('name')?>
+                    <?php checkempty('mail'); validMail('mail', 'mail')?>
                     <select name="country" class="form-control mt-4">
-                        <option value="" disabled selected>Select your country</option>
+
+                        <option value=""  selected>Select your country</option>
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Åland Islands</option>
                         <option value="AL">Albania</option>
@@ -331,11 +347,12 @@
                         <option value="ZM">Zambia</option>
                         <option value="ZW">Zimbabwe</option>
                     </select>
+                    <?php checkempty('country')?>
                     <div class="text-center">
-                        <label for="object">Message</label>
+                        <label for="object">Message<?php checkempty('object')?></label>
                     </div>
                     <select name="object" class="form-control mb-2">
-                        <option value="" disabled selected>Select your object</option>
+                        <option value="" selected>Select your object</option>
                         <option value="support">Support</option>
                         <option value="complain">Complain</option>
                         <option value="other">Other</option>
@@ -350,25 +367,6 @@
 
 
     </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

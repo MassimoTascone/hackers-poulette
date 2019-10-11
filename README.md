@@ -1,1 +1,14 @@
-# hackers-poulette
+# Form Hackers-Poulette
+
+## What I had to do 
+I had to create a functionnal form that works with PHP and Boostrap.
+
+## Languages used
+* HTML
+* CSS
+* PHP
+* BOOSTRAP
+
+## Mockup
+This is what my mockup looked like
+[Link to my readme (pdf)](assets/img/mockup.pdf)
