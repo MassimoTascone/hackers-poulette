@@ -12,4 +12,4 @@ I had to create a functionnal form that works with PHP and Boostrap.
 
 ## Mockup
 This is what my mockup looked like
-[Link to my readme (pdf)](assets/img/mockup.pdf)
+[Link to my mockup (pdf)](assets/img/mockup.pdf)
